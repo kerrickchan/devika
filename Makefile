@@ -26,7 +26,7 @@ compose-down: deps
 	docker-compose down;
 
 compose-up: deps compose-down
-	docker-compose up --build
+	docker-compose up --build -d
 
 compose-destroy: deps
 	docker images | grep -i devika | awk '{print $$3}' | xargs docker rmi -f
